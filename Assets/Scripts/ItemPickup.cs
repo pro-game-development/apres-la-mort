@@ -1,14 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class ItemPickup : MonoBehaviour
 {
     public string itemName;
+    public float pickupRange = 1f;
     
-    private void OnTriggerEnter(Collider other)
+    //private void OnTriggerEnter(Collider other)
+    private void Update()
     {
-        if (other.CompareTag("Player"))
+        if (Vector3.Distance(transform.position, PlayerManager.instance.player.transform.position) <= pickupRange && Gamepad.current != null && Gamepad.current.buttonWest.wasPressedThisFrame)
         {
             // Add the item to the player's inventory
             InventoryManager.AddItem(itemName);
