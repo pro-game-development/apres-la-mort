@@ -8,7 +8,9 @@ public class Script_DO_Note : MonoBehaviour
 
     private void OnMouseDown() {
         {
+            Song song = new Song();
             DO_Note.Play();
+            song.checkNote("DO");
         }
     }
 }

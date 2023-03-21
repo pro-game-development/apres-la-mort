@@ -9,6 +9,8 @@ public class Script_SOL_Note : MonoBehaviour
     private void OnMouseDown() {
         {
             SOL_Note.Play();
+            Song song = new Song();
+            song.checkNote("SOL");
         }
     }
 }

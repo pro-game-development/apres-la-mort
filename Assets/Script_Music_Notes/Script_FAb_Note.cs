@@ -9,6 +9,8 @@ public class Script_FAb_Note : MonoBehaviour
     private void OnMouseDown() {
         {
             FAb_Note.Play();
+            Song song = new Song();
+            song.checkNote("FAb");
         }
     }
 }

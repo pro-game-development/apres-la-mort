@@ -9,6 +9,8 @@ public class Script_SI2_Note : MonoBehaviour
     private void OnMouseDown() {
         {
             SI2_Note.Play();
+            Song song = new Song();
+            song.checkNote("SI2");
         }
     }
 }

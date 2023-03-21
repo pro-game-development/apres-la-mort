@@ -9,6 +9,8 @@ public class Script_DOb_Note : MonoBehaviour
     private void OnMouseDown() {
         {
             DOb_Note.Play();
+            Song song = new Song();
+            song.checkNote("DOb");
         }
     }
 }

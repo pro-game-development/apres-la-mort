@@ -9,6 +9,8 @@ public class Script_LAb2_Note : MonoBehaviour
     private void OnMouseDown() {
         {
             LAb2_Note.Play();
+            Song song = new Song();
+            song.checkNote("LAb2");
         }
     }
 }

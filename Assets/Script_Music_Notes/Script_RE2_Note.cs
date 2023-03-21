@@ -9,6 +9,8 @@ public class Script_RE2_Note : MonoBehaviour
     private void OnMouseDown() {
         {
             RE2_Note.Play();
+            Song song = new Song();
+            song.checkNote("RE2");
         }
     }
 }

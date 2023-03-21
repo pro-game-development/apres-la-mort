@@ -9,6 +9,8 @@ public class Script_REb_Note : MonoBehaviour
     private void OnMouseDown() {
         {
             REb_Note.Play();
+            Song song = new Song();
+            song.checkNote("REb");
         }
     }
 }
