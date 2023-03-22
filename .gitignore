@@ -30,7 +30,7 @@
 .vs/
 
 #other
-Assets/Imported Assets
+Assets/Excluded Imported Assets
 
 # Gradle cache directory
 .gradle/
