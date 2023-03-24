@@ -27,6 +27,7 @@ public class Movement: MonoBehaviour
         var transAmount2 = shiftSpeed * Time.deltaTime;
         var rotateAmount = rotateSpeed * Time.deltaTime;
 
+        //FrontWalk
         if (Input.GetAxis("Vertical") > 0)
         {
             ani.SetBool("walk", true);
@@ -34,6 +35,8 @@ public class Movement: MonoBehaviour
         }else{
             ani.SetBool("walk", false);
         }
+
+        //BackWalk
         if (Input.GetAxis("Vertical") < 0)
         {
             ani.SetBool("backwalk", true);
@@ -41,6 +44,8 @@ public class Movement: MonoBehaviour
         }else{
             ani.SetBool("backwalk", false);
         }
+
+        
         if (Input.GetAxis("Horizontal") < 0)
         {
             transform.Rotate(0, -rotateAmount, 0);
