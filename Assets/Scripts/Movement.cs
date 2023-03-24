@@ -72,7 +72,7 @@ public class Movement: MonoBehaviour
             transform.Translate(0, jumpp, 0);
         }*/
 
-        if (Input.GetKeyDown(KeyCode.E)){
+        if (Input.GetKeyDown(KeyCode.E) || Input.GetButtonDown("Fire3")){
             ani.SetBool("pick", true);
         }else{
             ani.SetBool("pick", false);
