@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Movement: MonoBehaviour
 {
@@ -14,8 +15,6 @@ public class Movement: MonoBehaviour
     public Animator ani;
     float nextFire;
 
-    /*public float jump = 5.0f;*/
-
     void Start()
     {
         ani = GetComponent<Animator>();
@@ -28,10 +27,7 @@ public class Movement: MonoBehaviour
         var transAmount2 = shiftSpeed * Time.deltaTime;
         var rotateAmount = rotateSpeed * Time.deltaTime;
 
-        /*var jumpp = jump * Time.deltaTime;*/
-
-        /*To switch bewteen the arrows keys and wasd just change "Input.GetKey("up")" to Input.GetKey(KeyCode.w)*/
-
+        //FrontWalk
         if (Input.GetAxis("Vertical") > 0)
         {
             ani.SetBool("walk", true);
@@ -39,6 +35,8 @@ public class Movement: MonoBehaviour
         }else{
             ani.SetBool("walk", false);
         }
+
+        //BackWalk
         if (Input.GetAxis("Vertical") < 0)
         {
             ani.SetBool("backwalk", true);
@@ -46,6 +44,8 @@ public class Movement: MonoBehaviour
         }else{
             ani.SetBool("backwalk", false);
         }
+
+        
         if (Input.GetAxis("Horizontal") < 0)
         {
             transform.Rotate(0, -rotateAmount, 0);
@@ -54,11 +54,6 @@ public class Movement: MonoBehaviour
         {
             transform.Rotate(0, rotateAmount, 0);
         }
-        if (Input.GetButtonDown("Fire1") && Time.time > nextFire)
-        {
-            nextFire = Time.time + fireInterval;
-            fire();
-        }
         if (Input.GetKey(KeyCode.LeftShift) && Input.GetKey("up"))
         {
             ani.SetBool("run", true);
@@ -66,22 +61,10 @@ public class Movement: MonoBehaviour
         }else{
             ani.SetBool("run", false);
         }
-        /*En caso de que se quiera utilizar salto
-        if(Input.GetKey(KeyCode.Space))
-        {
-            transform.Translate(0, jumpp, 0);
-        }*/
-
-        if (Input.GetKeyDown(KeyCode.E) || Input.GetButtonDown("Fire3")){
+        if (Gamepad.current != null && Gamepad.current.buttonWest.wasPressedThisFrame){
             ani.SetBool("pick", true);
         }else{
             ani.SetBool("pick", false);
         }
-    }
-
-    void fire()
-    {
-        var bullet = Instantiate(bulletObject, spawnPoint.position, spawnPoint.rotation);
-        bullet.GetComponent<Rigidbody>().velocity = transform.forward * bulletSpeed;
     }
 }

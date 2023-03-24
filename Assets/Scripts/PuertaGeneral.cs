@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PuertaGeneral : MonoBehaviour
 {
@@ -10,7 +11,7 @@ public class PuertaGeneral : MonoBehaviour
 
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.E) && enZona == true)
+        if(Gamepad.current != null && Gamepad.current.buttonWest.wasPressedThisFrame && enZona == true)
         {
             activa = !activa;
 
