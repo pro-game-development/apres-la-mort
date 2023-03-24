@@ -32,25 +32,25 @@ public class Movement: MonoBehaviour
 
         /*To switch bewteen the arrows keys and wasd just change "Input.GetKey("up")" to Input.GetKey(KeyCode.w)*/
 
-        if (Input.GetKey("up"))
+        if (Input.GetAxis("Vertical") > 0)
         {
             ani.SetBool("walk", true);
             transform.Translate(0, 0, transAmount);
         }else{
             ani.SetBool("walk", false);
         }
-        if (Input.GetKey("down"))
+        if (Input.GetAxis("Vertical") < 0)
         {
             ani.SetBool("backwalk", true);
             transform.Translate(0, 0, -transAmount);
         }else{
             ani.SetBool("backwalk", false);
         }
-        if (Input.GetKey("left"))
+        if (Input.GetAxis("Horizontal") < 0)
         {
             transform.Rotate(0, -rotateAmount, 0);
         }
-        if (Input.GetKey("right"))
+        if (Input.GetAxis("Horizontal") > 0)
         {
             transform.Rotate(0, rotateAmount, 0);
         }
