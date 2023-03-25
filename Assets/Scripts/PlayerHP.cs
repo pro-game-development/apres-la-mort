@@ -10,11 +10,11 @@ public class PlayerHP : MonoBehaviour
     public Animator Ani;
     public Movement movementScript;
 
-       void Start(){
-            Ani = GetComponent<Animator>();
-       }
+    void Start(){
+        Ani = GetComponent<Animator>();
+    }
        
-       void Update()
+    void Update()
     {
         hp = Mathf.Clamp(hp, 0, 100);
 
