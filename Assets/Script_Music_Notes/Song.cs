@@ -4,9 +4,7 @@ using UnityEngine;
 
 public class Song : MonoBehaviour
 {
-    private string[] notes = {"MI","FA","MI","RE","RE","MI","RE",
-                             "RE","DO","DO","RE","DO","DO","SI",
-                             "SI","DO","SI","LA"};
+    private string[] notes = {"MI","FA","MI","RE","RE","MI","RE","DO","DO","RE","DO","SI","DO","SI","LA"};
     private static int currentNote = 0;
     private static bool hasWon = false;
 
