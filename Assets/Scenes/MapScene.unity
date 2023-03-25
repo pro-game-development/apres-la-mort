@@ -48495,7 +48495,7 @@ MonoBehaviour:
   puerta: {fileID: 877459860696498027}
   needsKey: 1
   neededKey: KitchenKey
-  needKeyMessage: {fileID: 0}
+  needKeyMessage: {fileID: 2028233082}
 --- !u!114 &1222470023
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -48511,7 +48511,7 @@ MonoBehaviour:
   puerta: {fileID: 877459860696498029}
   needsKey: 1
   neededKey: KitchenKey
-  needKeyMessage: {fileID: 0}
+  needKeyMessage: {fileID: 2028233082}
 --- !u!65 &1222470024
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -77242,6 +77242,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 73516c48af5583b40877983333f67ee6, type: 3}
+--- !u!114 &2028233082 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8419149429744984077, guid: fe91146e160695a4db843937e29591ed, type: 3}
+  m_PrefabInstance: {fileID: 409225360}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2028405000
 PrefabInstance:
   m_ObjectHideFlags: 0
