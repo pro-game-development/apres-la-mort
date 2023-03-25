@@ -8883,7 +8883,7 @@ GameObject:
   - component: {fileID: 197549063}
   - component: {fileID: 197549062}
   m_Layer: 0
-  m_Name: Camera (17)
+  m_Name: Pool4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9040,7 +9040,7 @@ GameObject:
   - component: {fileID: 201136521}
   - component: {fileID: 201136522}
   m_Layer: 0
-  m_Name: Camera (1)
+  m_Name: Hall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17022,7 +17022,7 @@ GameObject:
   - component: {fileID: 384542339}
   - component: {fileID: 384542340}
   m_Layer: 0
-  m_Name: Camera (10)
+  m_Name: DiningRoom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -26748,7 +26748,7 @@ GameObject:
   - component: {fileID: 656566578}
   - component: {fileID: 656566579}
   m_Layer: 0
-  m_Name: Camera (6)
+  m_Name: Library
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -27780,7 +27780,7 @@ GameObject:
   - component: {fileID: 678380206}
   - component: {fileID: 678380205}
   m_Layer: 0
-  m_Name: Camera
+  m_Name: Entrance
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -27960,6 +27960,7 @@ Transform:
   - {fileID: 1441791428}
   - {fileID: 1928569289}
   - {fileID: 1918383925}
+  - {fileID: 1438851109}
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -31238,7 +31239,7 @@ GameObject:
   - component: {fileID: 760360261}
   - component: {fileID: 760360262}
   m_Layer: 0
-  m_Name: Camera (13)
+  m_Name: PuzzleRoom2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -35754,7 +35755,7 @@ GameObject:
   - component: {fileID: 863302122}
   - component: {fileID: 863302121}
   m_Layer: 0
-  m_Name: Camera (14)
+  m_Name: Pool
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -35838,7 +35839,7 @@ GameObject:
   - component: {fileID: 865794561}
   - component: {fileID: 865794562}
   m_Layer: 0
-  m_Name: Camera (9)
+  m_Name: SecondHall2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -37562,7 +37563,7 @@ GameObject:
   - component: {fileID: 920341981}
   - component: {fileID: 920341982}
   m_Layer: 0
-  m_Name: Camera (5)
+  m_Name: DeadBody2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -44339,7 +44340,7 @@ GameObject:
   - component: {fileID: 1120251112}
   - component: {fileID: 1120251111}
   m_Layer: 0
-  m_Name: Camera (12)
+  m_Name: PuzzleRoom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -46310,6 +46311,37 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 7754452471192528572, guid: 73516c48af5583b40877983333f67ee6, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 73516c48af5583b40877983333f67ee6, type: 3}
+--- !u!1 &1161856306
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1161856307}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1161856307
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1161856306}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.61, y: -0.468, z: -38.156}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 26
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1162003074
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -56656,6 +56688,117 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7915860275261272362, guid: dafc8b89b2bc45c4fb1c9464dd986d98, type: 3}
   m_PrefabInstance: {fileID: 667895834}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1438851108
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1438851109}
+  - component: {fileID: 1438851113}
+  - component: {fileID: 1438851112}
+  - component: {fileID: 1438851111}
+  - component: {fileID: 1438851110}
+  m_Layer: 0
+  m_Name: Cube (18)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1438851109
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1438851108}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 11.76, y: 0.91, z: -14.89}
+  m_LocalScale: {x: 11.873792, y: 1, z: 10.284817}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 680867823}
+  m_RootOrder: 18
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1438851110
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1438851108}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35cb6390713b25559a2fb5518e51c241, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  camara: {fileID: 1561794200}
+--- !u!65 &1438851111
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1438851108}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!23 &1438851112
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1438851108}
+  m_Enabled: 0
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &1438851113
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1438851108}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!4 &1439002687 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1021993789307804344, guid: 73516c48af5583b40877983333f67ee6, type: 3}
@@ -60358,7 +60501,7 @@ GameObject:
   - component: {fileID: 1535186106}
   - component: {fileID: 1535186107}
   m_Layer: 0
-  m_Name: Camera (2)
+  m_Name: Hall2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -60422,8 +60565,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1535186105}
-  m_LocalRotation: {x: -0.1115459, y: -0.827848, z: 0.17747526, w: -0.52031505}
-  m_LocalPosition: {x: 8.9, y: 3.7, z: -16.82}
+  m_LocalRotation: {x: -0.111545905, y: -0.8278481, z: 0.1774753, w: -0.52031505}
+  m_LocalPosition: {x: 8.900002, y: 3.7000003, z: -16.82}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -61071,7 +61214,7 @@ GameObject:
   - component: {fileID: 1558636117}
   - component: {fileID: 1558636116}
   m_Layer: 0
-  m_Name: Camera (16)
+  m_Name: Pool3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -61213,12 +61356,12 @@ GameObject:
   - component: {fileID: 1561794199}
   - component: {fileID: 1561794198}
   m_Layer: 0
-  m_Name: Camera (11)
+  m_Name: Kitchen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1561794197
 Transform:
   m_ObjectHideFlags: 0
@@ -65477,7 +65620,7 @@ GameObject:
   - component: {fileID: 1682376526}
   - component: {fileID: 1682376525}
   m_Layer: 0
-  m_Name: Camera (4)
+  m_Name: DeadBody
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -66396,7 +66539,7 @@ GameObject:
   - component: {fileID: 1711284158}
   - component: {fileID: 1711284159}
   m_Layer: 0
-  m_Name: Camera (15)
+  m_Name: Pool2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -70362,7 +70505,7 @@ GameObject:
   - component: {fileID: 1828331061}
   - component: {fileID: 1828331062}
   m_Layer: 0
-  m_Name: Camera (18)
+  m_Name: Bathroom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -75967,7 +76110,7 @@ GameObject:
   - component: {fileID: 2001874642}
   - component: {fileID: 2001874641}
   m_Layer: 0
-  m_Name: Camera (3)
+  m_Name: Hall3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -79594,7 +79737,7 @@ GameObject:
   - component: {fileID: 2103954759}
   - component: {fileID: 2103954760}
   m_Layer: 0
-  m_Name: Camera (7)
+  m_Name: Library2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -80661,7 +80804,7 @@ GameObject:
   - component: {fileID: 2131848081}
   - component: {fileID: 2131848080}
   m_Layer: 0
-  m_Name: Camera (8)
+  m_Name: SecondHall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
