@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class Song : MonoBehaviour
 {
-    // private string[] notes = {"MI","FA","MI","RE","RE","MI","RE",
-    //                           "DO","DO","RE","DO","SI","DO","SI","LA"};
-    private string[] notes = {"MI","FA","MI"};
+    private string[] notes = {"MI","FA","MI","RE","RE","MI","RE",
+                              "DO","DO","RE","DO","SI","DO","SI","LA"};
+    // private string[] notes = {"MI","FA","MI"};
     private static int currentNote = 0;
     public static bool hasWon = false;
 
@@ -30,7 +30,7 @@ public class Song : MonoBehaviour
             currentNote = 0;
         }
         
-        if(currentNote > 2){//14
+        if(currentNote > 14){
             Debug.Log(pianoRoomCamera);
             Inventory inventory = Resources.Load<Inventory>("Inventory");
             inventory.AddToInventory("CameraPiece1"); 
