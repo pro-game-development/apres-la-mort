@@ -15861,7 +15861,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 11ffd2943f533804a88192d645d2dfa9, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.415
+  m_Volume: 0.305
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -23668,8 +23668,9 @@ GameObject:
   - component: {fileID: 555624287}
   - component: {fileID: 555624288}
   - component: {fileID: 555624289}
+  - component: {fileID: 555624290}
   m_Layer: 0
-  m_Name: Walk
+  m_Name: Noises
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -23702,9 +23703,9 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 0.504
+  m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -23799,10 +23800,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sounds:
-  - {fileID: 8300000, guid: 3f8fbf0275163784f9e3b36cc370e2c4, type: 3}
-  - {fileID: 8300000, guid: e77d7ffe433006a468f2575ac69264b8, type: 3}
-  - {fileID: 8300000, guid: f7d8e3eed605e2440be9017fdc7f890e, type: 3}
-  - {fileID: 8300000, guid: f987eb79f97b7584a9eba681c1215538, type: 3}
+  - {fileID: 8300000, guid: 7790e2d0523b2d04b8f626ebf43671ba, type: 3}
+  - {fileID: 8300000, guid: 7bab1f2a18e25274793305e9ad4cafea, type: 3}
+  - {fileID: 8300000, guid: 89ffb0f4307b4e94c884288fd40f42e6, type: 3}
+  - {fileID: 8300000, guid: b7dae3b1d5b8f974c8828b2dfac5e5fb, type: 3}
+  - {fileID: 8300000, guid: a2df08706c0779f4c85059594038be15, type: 3}
+  - {fileID: 8300000, guid: de3f5c81529beae4382b556e60cf1261, type: 3}
+  volumeChangeMultiplier: 0.15
+  pitchChangeMultiplier: 0.2
+--- !u!114 &555624290
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 555624286}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d2894aeca16a044da9a6f251cc9dce7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &556315466
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -28323,7 +28340,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 8be89ba6282c22c428043a22aa74d1ee, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.2
+  m_Volume: 0.066
   m_Pitch: 1
   Loop: 1
   Mute: 0
