@@ -8,17 +8,11 @@ public class Movement: MonoBehaviour
     public float rotateSpeed = 90;
     public float speed = 5.0f;
     public float shiftSpeed = 6.0f;
-    public float fireInterval = 0.5f;
-    public float bulletSpeed = 20;
-    public Transform spawnPoint;
-    public GameObject bulletObject;
     public Animator ani;
-    float nextFire;
 
     void Start()
     {
         ani = GetComponent<Animator>();
-        nextFire = Time.time + fireInterval;
     }
 
     void Update()

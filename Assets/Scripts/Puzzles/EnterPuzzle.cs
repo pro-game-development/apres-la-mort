@@ -9,21 +9,20 @@ public class EnterPuzzle : MonoBehaviour
 {
     public float interactionRange = 3f;
     public string objectTag;
+    public Movement playerMovement;
 
     //Piano text
     public TextMeshProUGUI playPianoText;
     public TextMeshProUGUI needMusicSheetText;
-
-    //Clock text
-    public TextMeshProUGUI checkClockText;
-    public TextMeshProUGUI needClockHandsText;
+    public TextMeshProUGUI gotCameraPiece;
 
     public Camera pianoCamera;
-    public Camera clockCamera;
+    public Camera pianoRoomCamera;
 
-        //Instructions
-    public TextMeshProUGUI clockInstructions;
+    //Instructions
     public TextMeshProUGUI closePiano;
+
+    private int hasWonAux = 0;
 
     //Piano Images
     #region PianoImages
@@ -54,31 +53,42 @@ public class EnterPuzzle : MonoBehaviour
     public Script_SI2_Note si2Script;
     public Script_SOL_Note solScript;
     #endregion
-    
 
+    public bool isInPiano = false;
     private void Start(){
 
         //Piano text
         playPianoText.gameObject.SetActive(false);
         needMusicSheetText.gameObject.SetActive(false);
-        
-        //Clock text
-        checkClockText.gameObject.SetActive(false);
-        needClockHandsText.gameObject.SetActive(false);
     }
 
     private void Update()
     {
-        if (Vector3.Distance(transform.position, PlayerManager.instance.player.transform.position) <= interactionRange && Gamepad.current != null && Gamepad.current.buttonWest.wasPressedThisFrame)
+        if(Song.hasWon == true){
+            if(hasWonAux == 0){
+                pianoCamera.gameObject.SetActive(false);
+                pianoRoomCamera.gameObject.SetActive(true);
+                DeactivatePiano();
+            }
+            return;
+        }
+
+        if(isInPiano && Gamepad.current != null && Gamepad.current.selectButton.wasPressedThisFrame){
+            pianoCamera.gameObject.SetActive(false);
+            pianoRoomCamera.gameObject.SetActive(true);
+            isInPiano = false;
+            DeactivatePiano();
+        }
+
+        if (Vector3.Distance(transform.position, PlayerManager.instance.player.transform.position) <= interactionRange && Gamepad.current != null && Gamepad.current.buttonWest.wasPressedThisFrame && !isInPiano)
         {
             Inventory inventory = Resources.Load<Inventory>("Inventory");
             // IsPuzzle isPuzzle = new IsPuzzle();
 
             playPianoText.gameObject.SetActive(false);
-            checkClockText.gameObject.SetActive(false);
-
-            if(objectTag == "Piano" && inventory.inventory.Contains("MusicSheet")){
-
+            playerMovement.enabled = false;
+           
+            if(inventory.inventory.Contains("MusicSheet")){
                 //Cameras
                 Camera activeCamera = Camera.current;
                 activeCamera.gameObject.SetActive(false);
@@ -114,31 +124,30 @@ public class EnterPuzzle : MonoBehaviour
                 si2Script.enabled = true;
                 solScript.enabled = true;
                 #endregion
+
+                isInPiano = true;
             }
-            else if (objectTag == "Piano" && !inventory.inventory.Contains("MusicSheet")){
+            else{
                 needMusicSheetText.gameObject.SetActive(true);
                 return;
             }
-            else return;
-            // isPuzzle.showCanvas(objectTag);
         }
 
         else if (Vector3.Distance(transform.position, PlayerManager.instance.player.transform.position) <= interactionRange)
         {
-            if(objectTag == "Piano"){
+            if(!isInPiano){
                 playPianoText.gameObject.SetActive(true);
-            }
-            else{
-                checkClockText.gameObject.SetActive(true);
             }
         }
 
         else
         {
+            DeactivatePiano();
+        }
+    }
+
+    void DeactivatePiano(){
             playPianoText.gameObject.SetActive(false);
-            checkClockText.gameObject.SetActive(false);
-            playPianoText.gameObject.SetActive(false);
-            checkClockText.gameObject.SetActive(false);
 
             closePiano.gameObject.SetActive(false);
 
@@ -169,6 +178,7 @@ public class EnterPuzzle : MonoBehaviour
             si2Script.enabled = false;
             solScript.enabled = false;
             #endregion
-        }
+
+            playerMovement.enabled = true;
     }
 }
