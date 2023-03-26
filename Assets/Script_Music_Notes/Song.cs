@@ -10,10 +10,11 @@ public class Song : MonoBehaviour
     private static int currentNote = 0;
     public static bool hasWon = false;
 
-    public Camera pianoRoomCamera;
+    private PlayerHP hp;
 
-    void Start(){
-        pianoRoomCamera = GameObject.FindGameObjectWithTag("PuzzleRoom2").GetComponent<Camera>();
+    void Start()
+    {
+        hp = GameObject.FindWithTag("Player").GetComponent<PlayerHP>();
     }
 
     public void checkNote(string playedNote)
@@ -28,10 +29,11 @@ public class Song : MonoBehaviour
         else
         {
             currentNote = 0;
+            hp.hp += -10;
         }
         
         if(currentNote > 14){
-            Debug.Log(pianoRoomCamera);
+            
             Inventory inventory = Resources.Load<Inventory>("Inventory");
             inventory.AddToInventory("CameraPiece1"); 
             Debug.Log(inventory.inventory[0]);

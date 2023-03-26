@@ -89,7 +89,7 @@ public class EnterPuzzle : MonoBehaviour
            
             if(inventory.inventory.Contains("MusicSheet")){
                 playerMovement.enabled = false;
-                
+
                 //Cameras
                 Camera activeCamera = Camera.current;
                 activeCamera.gameObject.SetActive(false);
@@ -126,6 +126,8 @@ public class EnterPuzzle : MonoBehaviour
                 solScript.enabled = true;
                 #endregion
 
+                needMusicSheetText.gameObject.SetActive(false);
+
                 isInPiano = true;
             }
             else{
@@ -149,6 +151,7 @@ public class EnterPuzzle : MonoBehaviour
 
     void DeactivatePiano(){
             playPianoText.gameObject.SetActive(false);
+            needMusicSheetText.gameObject.SetActive(false);
 
             closePiano.gameObject.SetActive(false);
 

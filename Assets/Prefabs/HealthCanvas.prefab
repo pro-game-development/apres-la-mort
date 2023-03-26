@@ -201,7 +201,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: I found a the hands of a clock
+  m_text: I found the hands of a clock
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 64358eddda5405342b1bd8a6752c14d8, type: 2}
   m_sharedMaterial: {fileID: 4863366498519550500, guid: 64358eddda5405342b1bd8a6752c14d8, type: 2}
