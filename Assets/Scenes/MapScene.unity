@@ -38994,7 +38994,7 @@ PrefabInstance:
     - target: {fileID: 5896638846900766222, guid: a4a9498e8ad2ca444b0befcde64a3b2f, type: 3}
       propertyPath: Walk
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 555624288}
     - target: {fileID: 5896638846900766222, guid: a4a9498e8ad2ca444b0befcde64a3b2f, type: 3}
       propertyPath: m_Enabled
       value: 1
