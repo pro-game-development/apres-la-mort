@@ -36,7 +36,7 @@ public class EnemyMovement : MonoBehaviour
 
             ani.SetBool("run", false);
             timer += 1 * Time.deltaTime;
-            AttackEnemy.Play();
+            AttackEnemy.PlayDelayed(1.0f);
             if(timer >= 4){
                 rutine = Random.Range(0, 2);
                 timer = 0;
