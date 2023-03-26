@@ -62,10 +62,12 @@ public class Movement: MonoBehaviour
         }else{
             ani.SetBool("run", false);
         }
-        if (Gamepad.current != null && Gamepad.current.buttonWest.wasPressedThisFrame){
-            ani.SetBool("pick", true);
-        }else{
-            ani.SetBool("pick", false);
-        }
+        // if (Gamepad.current != null && Gamepad.current.buttonWest.wasPressedThisFrame){
+            
+        //     ani.SetBool("pick", true);
+            
+        // }else{
+        //     ani.SetBool("pick", false);
+        // }
     }
 }

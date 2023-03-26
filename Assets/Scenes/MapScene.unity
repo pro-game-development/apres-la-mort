@@ -2551,6 +2551,50 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f51464537a9f8d24ab8b868aa61e6b66, type: 3}
+--- !u!1 &60940623
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 60940625}
+  - component: {fileID: 60940624}
+  m_Layer: 0
+  m_Name: PickupAnimationController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &60940624
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 60940623}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc6a64ad2090bac49841ff8dcc1fa0a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &60940625
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 60940623}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 3.5186925, y: 14.507247, z: -18.583744}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 26
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &63075256 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1021993789307804344, guid: 73516c48af5583b40877983333f67ee6, type: 3}
@@ -5334,6 +5378,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7505650361099057327, guid: 365202fd3d59d504fa24e91abbec4291, type: 3}
+      propertyPath: ani
+      value: 
+      objectReference: {fileID: 2072409090}
     - target: {fileID: 7505650361099057327, guid: 365202fd3d59d504fa24e91abbec4291, type: 3}
       propertyPath: pickupMessage
       value: 
@@ -18792,6 +18840,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7866286481729764907, guid: fe91146e160695a4db843937e29591ed, type: 3}
+      propertyPath: m_text
+      value: I found the hands of a clock
+      objectReference: {fileID: 0}
     - target: {fileID: 8117405484828278958, guid: fe91146e160695a4db843937e29591ed, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 72.3
@@ -24927,6 +24979,7 @@ Transform:
   - {fileID: 636328396}
   - {fileID: 1939786444}
   - {fileID: 1426028628}
+  - {fileID: 1882990024}
   m_Father: {fileID: 0}
   m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -47510,6 +47563,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: LibraryKey
   pickupRange: 1
+  ani: {fileID: 2072409090}
   pickupMessage: {fileID: 409225365}
 --- !u!1001 &1162003074
 PrefabInstance:
@@ -74327,6 +74381,50 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 99633baa71b3b6245967bf3bcf58ea66, type: 3}
+--- !u!1 &1882990023
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1882990024}
+  - component: {fileID: 1882990025}
+  m_Layer: 0
+  m_Name: SongController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1882990024
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1882990023}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -15.795442, y: 17.437307, z: -36.715755}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 588710726}
+  m_RootOrder: 21
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1882990025
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1882990023}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fb73db2b43ccbe4ab7d1d1370b8fec1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1884285240
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -95426,6 +95524,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: BathroomKey
   pickupRange: 1
+  ani: {fileID: 2072409090}
   pickupMessage: {fileID: 1401120249}
 --- !u!4 &5382625852381593263
 Transform:
@@ -98854,6 +98953,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: KitchenKey
   pickupRange: 1
+  ani: {fileID: 2072409090}
   pickupMessage: {fileID: 1234398430}
 --- !u!1 &7190634809669919692
 GameObject:
