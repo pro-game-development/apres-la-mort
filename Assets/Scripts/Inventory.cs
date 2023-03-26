@@ -6,7 +6,7 @@ using UnityEngine;
 public class Inventory : ScriptableObject
 {
     // Define the inventory list as a class variable
-    private List<string> inventory = new List<string>();
+    public List<string> inventory = new List<string>();
 
     // Add an item to the inventory list
     public void AddToInventory(string itemName)

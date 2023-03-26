@@ -12,12 +12,15 @@ public class EnemyMovement : MonoBehaviour
     public Animator ani;
     public Quaternion angle;
     public float grade;
+    public AudioSource PassiveEnemy;
+    public AudioSource AttackEnemy;
 
     public GameObject target;
     // Start is called before the first frame update
     void Start()
     {
         ani = GetComponent<Animator>();
+        PassiveEnemy.Play();
         target = GameObject.Find("Player");
     }
 
@@ -33,6 +36,7 @@ public class EnemyMovement : MonoBehaviour
 
             ani.SetBool("run", false);
             timer += 1 * Time.deltaTime;
+            AttackEnemy.PlayDelayed(1.0f);
             if(timer >= 4){
                 rutine = Random.Range(0, 2);
                 timer = 0;
