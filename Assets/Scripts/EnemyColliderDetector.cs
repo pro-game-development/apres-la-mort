@@ -5,10 +5,10 @@ using UnityEngine;
 public class EnemyColliderDetector : MonoBehaviour
 {
     public string enemyTag = "Enemy";
-    public float minX = -10f;
-    public float maxX = 10f;
-    public float minZ = -10f;
-    public float maxZ = 10f;
+    public float minX = -38.3f;
+    public float maxX = 29f;
+    public float minZ = -35.3f;
+    public float maxZ = -11.6f;
 
     private void OnTriggerEnter(Collider other)
     {
