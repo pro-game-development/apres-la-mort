@@ -13,6 +13,8 @@ public class PuertaGeneral : MonoBehaviour
     private bool canEnter;
     public string neededKey = "";
     public TextMeshProUGUI needKeyMessage;
+    public AudioSource OpenDoor;
+    public AudioSource CloseDoor;
 
     void Start(){
         if(needKeyMessage != null){
@@ -44,11 +46,13 @@ public class PuertaGeneral : MonoBehaviour
             if(activa == true && canEnter)
             {
                 puerta.SetBool("PuertaActiv", true);
+                OpenDoor.Play();
             }
 
             if(activa == false && canEnter)
             {
                 puerta.SetBool("PuertaActiv", false);
+                CloseDoor.Play();
             }
         }
     }
