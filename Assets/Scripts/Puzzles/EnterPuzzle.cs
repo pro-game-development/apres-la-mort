@@ -68,6 +68,7 @@ public class EnterPuzzle : MonoBehaviour
             if(hasWonAux == 0){
                 pianoCamera.gameObject.SetActive(false);
                 pianoRoomCamera.gameObject.SetActive(true);
+                hasWonAux = 1;
                 DeactivatePiano();
             }
             return;

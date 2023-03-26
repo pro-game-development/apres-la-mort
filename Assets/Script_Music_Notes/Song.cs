@@ -36,8 +36,6 @@ public class Song : MonoBehaviour
             
             Inventory inventory = Resources.Load<Inventory>("Inventory");
             inventory.AddToInventory("CameraPiece1"); 
-            Debug.Log(inventory.inventory[0]);
-            Debug.Log(inventory.inventory[1]);
             hasWon = true;
             currentNote = 0;
             Debug.Log("win");
