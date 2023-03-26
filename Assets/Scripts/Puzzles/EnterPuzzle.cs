@@ -17,7 +17,7 @@ public class EnterPuzzle : MonoBehaviour
     public TextMeshProUGUI gotCameraPiece;
 
     public Camera pianoCamera;
-    public Camera pianoRoomCamera;
+    public Camera pianoRoomCamera;  
 
     //Instructions
     public TextMeshProUGUI closePiano;
@@ -86,9 +86,10 @@ public class EnterPuzzle : MonoBehaviour
             // IsPuzzle isPuzzle = new IsPuzzle();
 
             playPianoText.gameObject.SetActive(false);
-            playerMovement.enabled = false;
            
             if(inventory.inventory.Contains("MusicSheet")){
+                playerMovement.enabled = false;
+                
                 //Cameras
                 Camera activeCamera = Camera.current;
                 activeCamera.gameObject.SetActive(false);
