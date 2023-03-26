@@ -32,6 +32,7 @@ public class EnterClockPuzzle : MonoBehaviour
 
     private void Update()
     {
+        PlayerHP playerHP = GameObject.FindWithTag("Player").GetComponent<PlayerHP>();
         if(MoveClockHands.hasWon == true){
             if(hasWonAux == 0){
                 clockCamera.gameObject.SetActive(false);
@@ -42,7 +43,7 @@ public class EnterClockPuzzle : MonoBehaviour
             return;
         }
 
-        if(isInClock && Gamepad.current != null && Gamepad.current.selectButton.wasPressedThisFrame){
+        if((isInClock && Gamepad.current != null && Gamepad.current.selectButton.wasPressedThisFrame) || playerHP.hp <= 0){
             clockCamera.gameObject.SetActive(false);
             clockRoomCamera.gameObject.SetActive(true);
             isInClock = false;
@@ -57,7 +58,7 @@ public class EnterClockPuzzle : MonoBehaviour
 
             checkClockText.gameObject.SetActive(false);
 
-            // if(inventory.inventory.Contains("ClockHands")){
+            if(inventory.inventory.Contains("ClockHands")){
                 playerMovement.enabled = false;
                 //Cameras
                 Camera activeCamera = Camera.current;
@@ -70,10 +71,10 @@ public class EnterClockPuzzle : MonoBehaviour
 
                 clockHandsScript.enabled = true;
                 isInClock = true;
-            // }
-            // else{
-            //     needClockHandsText.gameObject.SetActive(true);
-            // }
+            }
+            else{
+                needClockHandsText.gameObject.SetActive(true);
+            }
         }
 
         else if (Vector3.Distance(transform.position, PlayerManager.instance.player.transform.position) <= interactionRange)

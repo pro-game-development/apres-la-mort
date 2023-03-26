@@ -64,6 +64,8 @@ public class EnterPuzzle : MonoBehaviour
 
     private void Update()
     {
+        PlayerHP playerHP = GameObject.FindWithTag("Player").GetComponent<PlayerHP>();
+
         if(Song.hasWon == true){
             if(hasWonAux == 0){
                 pianoCamera.gameObject.SetActive(false);
@@ -74,7 +76,7 @@ public class EnterPuzzle : MonoBehaviour
             return;
         }
 
-        if(isInPiano && Gamepad.current != null && Gamepad.current.selectButton.wasPressedThisFrame){
+        if((isInPiano && Gamepad.current != null && Gamepad.current.selectButton.wasPressedThisFrame) || playerHP.hp <= 0){
             pianoCamera.gameObject.SetActive(false);
             pianoRoomCamera.gameObject.SetActive(true);
             isInPiano = false;
@@ -88,7 +90,7 @@ public class EnterPuzzle : MonoBehaviour
 
             playPianoText.gameObject.SetActive(false);
            
-            if(inventory.inventory.Contains("MusicSheet")){
+            // if(inventory.inventory.Contains("MusicSheet")){
                 playerMovement.enabled = false;
 
                 //Cameras
@@ -130,11 +132,11 @@ public class EnterPuzzle : MonoBehaviour
                 needMusicSheetText.gameObject.SetActive(false);
 
                 isInPiano = true;
-            }
-            else{
-                needMusicSheetText.gameObject.SetActive(true);
-                return;
-            }
+            //}
+            // else{
+            //     needMusicSheetText.gameObject.SetActive(true);
+            //     return;
+            // }
         }
 
         else if (Vector3.Distance(transform.position, PlayerManager.instance.player.transform.position) <= interactionRange)
