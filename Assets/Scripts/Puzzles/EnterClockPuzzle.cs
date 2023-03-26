@@ -10,6 +10,7 @@ public class EnterClockPuzzle : MonoBehaviour
     //Clock text
     public TextMeshProUGUI checkClockText;
     public TextMeshProUGUI needClockHandsText;
+    public TextMeshProUGUI gotCameraPiece;
     public Camera clockCamera;
     public Camera clockRoomCamera;
 
@@ -28,6 +29,7 @@ public class EnterClockPuzzle : MonoBehaviour
         needClockHandsText.gameObject.SetActive(false);
         clockInstructions.gameObject.SetActive(false);
         clockHandsScript.enabled = false;
+        gotCameraPiece.gameObject.SetActive(false);
     }
 
     private void Update()
@@ -38,12 +40,17 @@ public class EnterClockPuzzle : MonoBehaviour
                 clockCamera.gameObject.SetActive(false);
                 clockRoomCamera.gameObject.SetActive(true);
                 hasWonAux = 1;
+                playerMovement.enabled = true;
+                gotCameraPiece.gameObject.SetActive(true);
                 DeactivateClock();
             }
             return;
         }
 
         if((isInClock && Gamepad.current != null && Gamepad.current.selectButton.wasPressedThisFrame) || playerHP.hp <= 0){
+            if(playerHP.hp>0){
+                playerMovement.enabled = true;
+            }
             clockCamera.gameObject.SetActive(false);
             clockRoomCamera.gameObject.SetActive(true);
             isInClock = false;
@@ -96,5 +103,14 @@ public class EnterClockPuzzle : MonoBehaviour
         needClockHandsText.gameObject.SetActive(false);
 
         clockHandsScript.enabled = false;
+
+        StartCoroutine(GotCameraCoroutine());
+    }
+
+    IEnumerator GotCameraCoroutine()
+    {
+        yield return new WaitForSeconds(2);
+        gotCameraPiece.gameObject.SetActive(false);
+        // Rest of the code here
     }
 }

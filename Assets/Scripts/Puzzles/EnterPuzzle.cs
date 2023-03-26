@@ -60,6 +60,7 @@ public class EnterPuzzle : MonoBehaviour
         //Piano text
         playPianoText.gameObject.SetActive(false);
         needMusicSheetText.gameObject.SetActive(false);
+        gotCameraPiece.gameObject.SetActive(false);
     }
 
     private void Update()
@@ -71,6 +72,8 @@ public class EnterPuzzle : MonoBehaviour
                 pianoCamera.gameObject.SetActive(false);
                 pianoRoomCamera.gameObject.SetActive(true);
                 hasWonAux = 1;
+                gotCameraPiece.gameObject.SetActive(true);
+                playerMovement.enabled = true;
                 DeactivatePiano();
             }
             return;
@@ -80,6 +83,9 @@ public class EnterPuzzle : MonoBehaviour
             pianoCamera.gameObject.SetActive(false);
             pianoRoomCamera.gameObject.SetActive(true);
             isInPiano = false;
+            if(playerHP.hp>0){
+                playerMovement.enabled = true;
+            }
             DeactivatePiano();
         }
 
@@ -90,7 +96,7 @@ public class EnterPuzzle : MonoBehaviour
 
             playPianoText.gameObject.SetActive(false);
            
-            // if(inventory.inventory.Contains("MusicSheet")){
+            if(inventory.inventory.Contains("MusicSheet")){
                 playerMovement.enabled = false;
 
                 //Cameras
@@ -132,11 +138,11 @@ public class EnterPuzzle : MonoBehaviour
                 needMusicSheetText.gameObject.SetActive(false);
 
                 isInPiano = true;
-            //}
-            // else{
-            //     needMusicSheetText.gameObject.SetActive(true);
-            //     return;
-            // }
+            }
+            else{
+                needMusicSheetText.gameObject.SetActive(true);
+                return;
+            }
         }
 
         else if (Vector3.Distance(transform.position, PlayerManager.instance.player.transform.position) <= interactionRange)
@@ -186,6 +192,13 @@ public class EnterPuzzle : MonoBehaviour
             solScript.enabled = false;
             #endregion
 
-            playerMovement.enabled = true;
+            StartCoroutine(GotCameraCoroutine());
+    }
+
+    IEnumerator GotCameraCoroutine()
+    {
+        yield return new WaitForSeconds(2);
+        gotCameraPiece.gameObject.SetActive(false);
+        // Rest of the code here
     }
 }

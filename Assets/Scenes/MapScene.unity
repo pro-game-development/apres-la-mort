@@ -16506,7 +16506,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1717375482005192818, guid: 37bb3ad41b2eab6e3ba3b8b0a1d897a9, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1717375482005192818, guid: 37bb3ad41b2eab6e3ba3b8b0a1d897a9, type: 3}
       propertyPath: m_TagString
@@ -18902,6 +18902,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 518804533613107477, guid: fe91146e160695a4db843937e29591ed, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1412657303010237275, guid: fe91146e160695a4db843937e29591ed, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: -74.1
@@ -19011,6 +19015,10 @@ PrefabInstance:
       value: -252
       objectReference: {fileID: 0}
     - target: {fileID: 2664811389821321119, guid: fe91146e160695a4db843937e29591ed, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3032062248542487659, guid: fe91146e160695a4db843937e29591ed, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
@@ -27090,8 +27098,9 @@ GameObject:
   - component: {fileID: 635886265}
   - component: {fileID: 635886264}
   - component: {fileID: 635886263}
+  - component: {fileID: 635886267}
   m_Layer: 0
-  m_Name: Cube (4)
+  m_Name: PutNewCamera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -27188,6 +27197,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 635886261}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &635886267
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 635886261}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04e3333cdfd6cf24993da9b02ffda697, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cameraPrefab: {fileID: 919132149155446097, guid: be907d9dbf5af5b439d6d165d8458e7f, type: 3}
+  cameraBroken: {fileID: 8272668616286600641}
+  needPiecesMessage: {fileID: 1919783711}
+  putCameraMessage: {fileID: 1919783710}
 --- !u!1001 &635940230
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -38809,6 +38834,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 99633baa71b3b6245967bf3bcf58ea66, type: 3}
+--- !u!114 &902672452 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4514168328828535055, guid: fe91146e160695a4db843937e29591ed, type: 3}
+  m_PrefabInstance: {fileID: 409225360}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &903839978 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8632805962769916465, guid: c21952bd12c767f4eba6261ca052c3ff, type: 3}
@@ -62595,7 +62631,7 @@ MonoBehaviour:
   playerMovement: {fileID: 2072409094}
   playPianoText: {fileID: 228509183}
   needMusicSheetText: {fileID: 1605721023}
-  gotCameraPiece: {fileID: 0}
+  gotCameraPiece: {fileID: 1557312166}
   pianoCamera: {fileID: 1045454835}
   pianoRoomCamera: {fileID: 760360261}
   closePiano: {fileID: 325068208}
@@ -64140,6 +64176,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8632805962769916465, guid: c21952bd12c767f4eba6261ca052c3ff, type: 3}
   m_PrefabInstance: {fileID: 2011354410}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1557312166 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8422131691260670575, guid: fe91146e160695a4db843937e29591ed, type: 3}
+  m_PrefabInstance: {fileID: 409225360}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1558315741 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1899727381579947998, guid: fe91146e160695a4db843937e29591ed, type: 3}
@@ -76681,6 +76728,7 @@ MonoBehaviour:
   interactionRange: 1
   checkClockText: {fileID: 1959662036}
   needClockHandsText: {fileID: 1011562255}
+  gotCameraPiece: {fileID: 902672452}
   clockCamera: {fileID: 1527793592}
   clockRoomCamera: {fileID: 760360261}
   clockInstructions: {fileID: 842363954}
@@ -76869,6 +76917,28 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8632805962769916465, guid: c21952bd12c767f4eba6261ca052c3ff, type: 3}
   m_PrefabInstance: {fileID: 1860029691}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1919783710 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7768103663869874718, guid: fe91146e160695a4db843937e29591ed, type: 3}
+  m_PrefabInstance: {fileID: 409225360}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1919783711 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3160517369824107949, guid: fe91146e160695a4db843937e29591ed, type: 3}
+  m_PrefabInstance: {fileID: 409225360}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1922787496 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1021993789307804344, guid: 73516c48af5583b40877983333f67ee6, type: 3}
