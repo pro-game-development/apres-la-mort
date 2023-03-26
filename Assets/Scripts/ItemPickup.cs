@@ -8,6 +8,8 @@ public class ItemPickup : MonoBehaviour
 {
     public string itemName;
     public float pickupRange = 1f;
+    public Animator ani;
+
     public TextMeshProUGUI pickupMessage; // The UI text element to display the pickup message
 
     private void Start()
@@ -15,11 +17,22 @@ public class ItemPickup : MonoBehaviour
         pickupMessage.gameObject.SetActive(false); // Hide the pickup message at the start of the game
     }
     
+    private IEnumerator DelayedPickup()
+    {
+        yield return new WaitForSeconds(1f);
+        
+        // Add the item to the player's inventory
+        InventoryManager.AddItem(itemName);
+        // Destroy the item in the game world
+        Destroy(gameObject);
+
+        pickupMessage.gameObject.SetActive(false);
+        ani.SetBool("pick", false);
+    }
+
     //private void OnTriggerEnter(Collider other)
     private void Update()
     {
-        
-
         if (PlayerManager.instance.player == null)
         {
             return;
@@ -27,14 +40,9 @@ public class ItemPickup : MonoBehaviour
 
         if (Vector3.Distance(transform.position, PlayerManager.instance.player.transform.position) <= pickupRange && Gamepad.current != null && Gamepad.current.buttonWest.wasPressedThisFrame)
         {
-            // Add the item to the player's inventory
-            InventoryManager.AddItem(itemName);
-            // Destroy the item in the game world
-            Destroy(gameObject);
-
-            pickupMessage.gameObject.SetActive(false);
+            ani.SetBool("pick", true);
+            StartCoroutine(DelayedPickup());
         }
-
         else if (Vector3.Distance(transform.position, PlayerManager.instance.player.transform.position) <= pickupRange)
         {
             // Show the pickup message if the player is close enough to the item
@@ -55,6 +63,5 @@ public static class InventoryManager
         // Find the inventory object and add the item
         Inventory inventory = Resources.Load<Inventory>("Inventory");
         inventory.AddToInventory(itemName);
-
     }
 }

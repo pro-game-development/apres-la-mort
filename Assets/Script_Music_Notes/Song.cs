@@ -9,33 +9,41 @@ public class Song : MonoBehaviour
     // private string[] notes = {"MI","FA","MI"};
     private static int currentNote = 0;
     public static bool hasWon = false;
-
-    public Camera pianoRoomCamera;
+    public PlayerHP playerHP; // reference to the PlayerHP script
 
     void Start(){
-        pianoRoomCamera = GameObject.FindGameObjectWithTag("PuzzleRoom2").GetComponent<Camera>();
+        playerHP = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerHP>();
     }
-
     public void checkNote(string playedNote)
     {
         Debug.Log("current note: " + currentNote + " " + notes[currentNote]);
-        if(hasWon){
+        if (hasWon)
+        {
             return;
         }
-        if(playedNote == notes[currentNote]){
-            currentNote ++;
+        if (playedNote == notes[currentNote])
+        {
+            currentNote++;
         }
         else
         {
             currentNote = 0;
+            PlayerHP playerHP = GameObject.FindWithTag("Player").GetComponent<PlayerHP>();
+            if(playerHP != null)
+            {
+                playerHP.hp -= 10;
+                Debug.Log("hp: " + playerHP.hp);
+            }
+            else
+            {
+                Debug.Log("PlayerHP component not found!");
+            }
         }
-        
-        if(currentNote > 14){
-            Debug.Log(pianoRoomCamera);
+
+        if (currentNote > 14)
+        {
             Inventory inventory = Resources.Load<Inventory>("Inventory");
-            inventory.AddToInventory("CameraPiece1"); 
-            Debug.Log(inventory.inventory[0]);
-            Debug.Log(inventory.inventory[1]);
+            inventory.AddToInventory("CameraPiece1");
             hasWon = true;
             currentNote = 0;
             Debug.Log("win");

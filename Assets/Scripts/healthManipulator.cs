@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class healthManipulator : MonoBehaviour
 {
@@ -10,11 +11,16 @@ public class healthManipulator : MonoBehaviour
     public int amount;
     public float damageTime;
     float currentDamageTime;
+    public TextMeshProUGUI escapeMessage;
+    private static bool isTakingDamage = false;
 
     // Start is called before the first frame update
     void Start()
     {
         playerHP = GameObject.FindWithTag("Player").GetComponent<PlayerHP>();    
+        if(escapeMessage != null){
+            escapeMessage.gameObject.SetActive(false);
+        }
     }
 
     private void OnTriggerStay(Collider other) {
@@ -24,12 +30,18 @@ public class healthManipulator : MonoBehaviour
                 playerHP.hp += amount;
                 currentDamageTime = 0.0f;
             }
+            if(escapeMessage != null){
+                escapeMessage.gameObject.SetActive(true);
+                isTakingDamage = true;
+            }
         }    
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    private void OnTriggerExit(Collider other) {
+        if(other.tag == "Player"){
+            if(escapeMessage != null){
+                escapeMessage.gameObject.SetActive(false);
+            }
+        }
     }
 }

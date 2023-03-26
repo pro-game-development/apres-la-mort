@@ -64,16 +64,19 @@ public class EnterPuzzle : MonoBehaviour
 
     private void Update()
     {
+        PlayerHP playerHP = GameObject.FindWithTag("Player").GetComponent<PlayerHP>();
+
         if(Song.hasWon == true){
             if(hasWonAux == 0){
                 pianoCamera.gameObject.SetActive(false);
                 pianoRoomCamera.gameObject.SetActive(true);
+                hasWonAux = 1;
                 DeactivatePiano();
             }
             return;
         }
 
-        if(isInPiano && Gamepad.current != null && Gamepad.current.selectButton.wasPressedThisFrame){
+        if((isInPiano && Gamepad.current != null && Gamepad.current.selectButton.wasPressedThisFrame) || playerHP.hp <= 0){
             pianoCamera.gameObject.SetActive(false);
             pianoRoomCamera.gameObject.SetActive(true);
             isInPiano = false;
@@ -87,9 +90,9 @@ public class EnterPuzzle : MonoBehaviour
 
             playPianoText.gameObject.SetActive(false);
            
-            if(inventory.inventory.Contains("MusicSheet")){
+            // if(inventory.inventory.Contains("MusicSheet")){
                 playerMovement.enabled = false;
-                
+
                 //Cameras
                 Camera activeCamera = Camera.current;
                 activeCamera.gameObject.SetActive(false);
@@ -126,12 +129,14 @@ public class EnterPuzzle : MonoBehaviour
                 solScript.enabled = true;
                 #endregion
 
+                needMusicSheetText.gameObject.SetActive(false);
+
                 isInPiano = true;
-            }
-            else{
-                needMusicSheetText.gameObject.SetActive(true);
-                return;
-            }
+            //}
+            // else{
+            //     needMusicSheetText.gameObject.SetActive(true);
+            //     return;
+            // }
         }
 
         else if (Vector3.Distance(transform.position, PlayerManager.instance.player.transform.position) <= interactionRange)
@@ -149,6 +154,7 @@ public class EnterPuzzle : MonoBehaviour
 
     void DeactivatePiano(){
             playPianoText.gameObject.SetActive(false);
+            needMusicSheetText.gameObject.SetActive(false);
 
             closePiano.gameObject.SetActive(false);
 
