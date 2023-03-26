@@ -9,6 +9,8 @@ public class Movement: MonoBehaviour
     public float speed = 5.0f;
     public float shiftSpeed = 6.0f;
     public Animator ani;
+    float nextFire;
+    public AudioSource Walk;
 
     void Start()
     {
@@ -26,6 +28,7 @@ public class Movement: MonoBehaviour
         {
             ani.SetBool("walk", true);
             transform.Translate(0, 0, transAmount);
+            Walk.Play();
         }else{
             ani.SetBool("walk", false);
         }
@@ -35,6 +38,7 @@ public class Movement: MonoBehaviour
         {
             ani.SetBool("backwalk", true);
             transform.Translate(0, 0, -transAmount);
+            Walk.Play();
         }else{
             ani.SetBool("backwalk", false);
         }
