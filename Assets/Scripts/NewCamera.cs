@@ -17,6 +17,9 @@ public class NewCamera : MonoBehaviour
     private bool cameraPlaced = false;
     public Camera corpseCamera;
     public AudioSource cameraClick;
+    public Movement playerMovement;
+    public GameObject enemy;
+    public GameObject hpBar;
 
     void Start(){
         needPiecesMessage.gameObject.SetActive(false);
@@ -48,6 +51,9 @@ public class NewCamera : MonoBehaviour
                 activeCamera.gameObject.SetActive(false);
                 corpseCamera.gameObject.SetActive(true);
                 cameraPlaced=true;
+                playerMovement.enabled = false;
+                Destroy(enemy);
+                Destroy(hpBar);
             // }
             // else {
             //     putCameraMessage.gameObject.SetActive(false);
