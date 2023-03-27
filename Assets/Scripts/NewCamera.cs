@@ -9,11 +9,14 @@ public class NewCamera : MonoBehaviour
 {
     public GameObject cameraPrefab;
     public GameObject cameraBroken;
+    public GameObject blanket;
     public TextMeshProUGUI needPiecesMessage;
     public TextMeshProUGUI putCameraMessage;
     public TextMeshProUGUI takePictureMessage;
     private bool isColliding = false;
     private bool cameraPlaced = false;
+    public Camera corpseCamera;
+    public AudioSource cameraClick;
 
     void Start(){
         needPiecesMessage.gameObject.SetActive(false);
@@ -28,16 +31,22 @@ public class NewCamera : MonoBehaviour
             Inventory inventory = Resources.Load<Inventory>("Inventory");
             Vector3 cameraPosition = new Vector3(-6.59695625f,1.722f,-16.8862514f);
             Quaternion rotation = Quaternion.Euler(0f, -80f, 0f);
+            Camera activeCamera = Camera.current;
 
             if(cameraPlaced){
-                SceneManager.LoadScene("WinScene");
+                
+                StartCoroutine(TakePictureCorutine());
+                
             }
            
             if(inventory.inventory.Contains("CameraPiece2") && inventory.inventory.Contains("CameraPiece1")){
                 Destroy(cameraBroken);
+                Destroy(blanket);
                 GameObject newObject = Instantiate(cameraPrefab,cameraPosition,rotation);
                 putCameraMessage.gameObject.SetActive(false);
                 takePictureMessage.gameObject.SetActive(true);
+                activeCamera.gameObject.SetActive(false);
+                corpseCamera.gameObject.SetActive(true);
                 cameraPlaced=true;
             }
             else {
@@ -66,6 +75,14 @@ public class NewCamera : MonoBehaviour
             takePictureMessage.gameObject.SetActive(false);
             isColliding = false;
         }
+    }
+
+    IEnumerator TakePictureCorutine()
+    {
+        cameraClick.Play();
+        yield return new WaitForSeconds(3);
+        SceneManager.LoadScene("WinScene");
+        // Rest of the code here
     }
 }
 // 
