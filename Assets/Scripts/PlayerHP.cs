@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+using UnityEngine.SceneManagement;
 public class PlayerHP : MonoBehaviour
 {
     public float hp = 100;
@@ -33,5 +33,6 @@ public class PlayerHP : MonoBehaviour
 
     void DestroyPlayer(){
         Destroy(GameObject.FindGameObjectWithTag("Player"));
+        SceneManager.LoadScene("DieScene");
     }
 }

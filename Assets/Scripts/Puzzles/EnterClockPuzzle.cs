@@ -47,7 +47,7 @@ public class EnterClockPuzzle : MonoBehaviour
             return;
         }
 
-        if((isInClock && Gamepad.current != null && Gamepad.current.selectButton.wasPressedThisFrame) || playerHP.hp <= 0){
+        if((isInClock && Gamepad.current != null && Gamepad.current.selectButton.wasPressedThisFrame) || isInClock && playerHP.hp <= 0){
             if(playerHP.hp>0){
                 playerMovement.enabled = true;
             }

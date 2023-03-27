@@ -79,7 +79,7 @@ public class EnterPuzzle : MonoBehaviour
             return;
         }
 
-        if((isInPiano && Gamepad.current != null && Gamepad.current.selectButton.wasPressedThisFrame) || playerHP.hp <= 0){
+        if((isInPiano && Gamepad.current != null && Gamepad.current.selectButton.wasPressedThisFrame) || isInPiano && playerHP.hp <= 0){
             pianoCamera.gameObject.SetActive(false);
             pianoRoomCamera.gameObject.SetActive(true);
             isInPiano = false;
