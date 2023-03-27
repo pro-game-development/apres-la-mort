@@ -289,7 +289,7 @@ RectTransform:
   m_GameObject: {fileID: 521153374}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 9.060577, y: 28.25811, z: 1.0247899}
+  m_LocalScale: {x: 1002.0092, y: 2429.4346, z: 1.0247899}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2134355565}
@@ -525,7 +525,7 @@ VideoPlayer:
   m_ControlledAudioTrackCount: 1
   m_PlayOnAwake: 1
   m_SkipOnDrop: 1
-  m_Looping: 0
+  m_Looping: 1
   m_WaitForFirstFrame: 1
   m_FrameReadyEventEnabled: 0
   m_VideoShaders: []
@@ -625,7 +625,6 @@ GameObject:
   - component: {fileID: 2134355564}
   - component: {fileID: 2134355563}
   - component: {fileID: 2134355562}
-  - component: {fileID: 2134355561}
   m_Layer: 5
   m_Name: WinScene
   m_TagString: Untagged
@@ -633,41 +632,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!328 &2134355561
-VideoPlayer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2134355560}
-  m_Enabled: 1
-  m_VideoClip: {fileID: 32900000, guid: 22280e71aca1c3b4f86ddc100e597f68, type: 3}
-  m_TargetCameraAlpha: 1
-  m_TargetCamera3DLayout: 0
-  m_TargetCamera: {fileID: 0}
-  m_TargetTexture: {fileID: 0}
-  m_TimeReference: 0
-  m_TargetMaterialRenderer: {fileID: 0}
-  m_TargetMaterialProperty: <noninit>
-  m_RenderMode: 2
-  m_AspectRatio: 2
-  m_DataSource: 0
-  m_PlaybackSpeed: 1
-  m_AudioOutputMode: 2
-  m_TargetAudioSources:
-  - {fileID: 0}
-  m_DirectAudioVolumes:
-  - 1
-  m_Url: 
-  m_EnabledAudioTracks: 01
-  m_DirectAudioMutes: 00
-  m_ControlledAudioTrackCount: 1
-  m_PlayOnAwake: 1
-  m_SkipOnDrop: 0
-  m_Looping: 1
-  m_WaitForFirstFrame: 0
-  m_FrameReadyEventEnabled: 0
-  m_VideoShaders: []
 --- !u!114 &2134355562
 MonoBehaviour:
   m_ObjectHideFlags: 0
