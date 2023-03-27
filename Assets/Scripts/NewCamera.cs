@@ -39,7 +39,7 @@ public class NewCamera : MonoBehaviour
                 
             }
            
-            if(inventory.inventory.Contains("CameraPiece2") && inventory.inventory.Contains("CameraPiece1")){
+            // if(inventory.inventory.Contains("CameraPiece2") && inventory.inventory.Contains("CameraPiece1")){
                 Destroy(cameraBroken);
                 Destroy(blanket);
                 GameObject newObject = Instantiate(cameraPrefab,cameraPosition,rotation);
@@ -48,11 +48,11 @@ public class NewCamera : MonoBehaviour
                 activeCamera.gameObject.SetActive(false);
                 corpseCamera.gameObject.SetActive(true);
                 cameraPlaced=true;
-            }
-            else {
-                putCameraMessage.gameObject.SetActive(false);
-                needPiecesMessage.gameObject.SetActive(true);
-            }
+            // }
+            // else {
+            //     putCameraMessage.gameObject.SetActive(false);
+            //     needPiecesMessage.gameObject.SetActive(true);
+            // }
         }
     }
 
